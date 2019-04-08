@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1831">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tela Principal-->
+        <scene sceneID="203">
+            <objects>
+                <viewController id="204" customClass="TelaPrincipal" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="201"/>
+                        <viewControllerLayoutGuide type="bottom" id="202"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="205">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cao.png" translatesAutoresizingMaskIntoConstraints="NO" id="208">
+                                <rect key="frame" x="35.5" y="96" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Digite a idade do seu Cachorro:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHp-4q-lPx">
+                                <rect key="frame" x="20" y="229" width="343" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.098983104524333565" green="0.13070197174351647" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <textField opaque="NO" alpha="0.25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Idade Cachorro" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="62c-On-e3q">
+                                <rect key="frame" x="124" y="276" width="146" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGY-2j-qHE">
+                                <rect key="frame" x="124" y="311" width="146" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Descobrir Idade"/>
+                                <connections>
+                                    <action selector="ButtonText_TouchUpInside:" destination="204" eventType="touchUpInside" id="410"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOU-xx-sc3">
+                                <rect key="frame" x="16" y="350" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="ButtonText" destination="EGY-2j-qHE" id="name-outlet-EGY-2j-qHE"/>
+                        <outlet property="LabelText" destination="EOU-xx-sc3" id="name-outlet-EOU-xx-sc3"/>
+                        <outlet property="TextField" destination="62c-On-e3q" id="name-outlet-62c-On-e3q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="206" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176" y="-537"/>
+        </scene>
+        <!--Sorteio View-->
+        <scene sceneID="Zq9-6W-luw">
+            <objects>
+                <viewController id="pfF-9u-ghD" customClass="SorteioView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dgy-n6-wpp"/>
+                        <viewControllerLayoutGuide type="bottom" id="lWw-ro-Ntn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B4D-mP-Ipc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-Er-3gH">
+                                <rect key="frame" x="98" y="232" width="178" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="imagens-app-sorteio/botaogerar.png"/>
+                                <state key="highlighted" image="imagens-app-sorteio/botaogerar-pressionado.png"/>
+                                <connections>
+                                    <action selector="ButtonRandom_TouchUpInside:" destination="pfF-9u-ghD" eventType="touchUpInside" id="2355"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-xb-lSW">
+                                <rect key="frame" x="16" y="423" width="343" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagens-app-sorteio/logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="DwX-5U-zor">
+                                <rect key="frame" x="67" y="96" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.54242718533234147" blue="0.254097131712966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="ButtonRandom" destination="A1v-Er-3gH" id="name-outlet-A1v-Er-3gH"/>
+                        <outlet property="TextRandom" destination="4ML-xb-lSW" id="name-outlet-4ML-xb-lSW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7vr-S4-L3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="347.3547"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1830">
+            <objects>
+                <navigationController id="1831" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1833">
+                        <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1840" kind="relationship" relationship="rootViewController" id="1890"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1834" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1581" y="-494"/>
+        </scene>
+        <!--Primeira Table View-->
+        <scene sceneID="vjZ-4C-aWN">
+            <objects>
+                <tableViewController id="btK-R4-WeB" customClass="PrimeiraTableView" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FeW-je-eGH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WTU-XG-Q6L">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WTU-XG-Q6L" id="fLl-1I-H7U">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="btK-R4-WeB" id="5Yy-MX-5mK"/>
+                            <outlet property="delegate" destination="btK-R4-WeB" id="YRR-St-imy"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tI8-Cj-Mlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703" y="-1455"/>
+        </scene>
+        <!--MENU-->
+        <scene sceneID="1839">
+            <objects>
+                <viewController id="1840" customClass="Index" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1837"/>
+                        <viewControllerLayoutGuide type="bottom" id="1838"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1841">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-sS-1Mq">
+                                <rect key="frame" x="20" y="103" width="343" height="210"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wY2-Fl-sOV">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="57"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQd-pd-4TW">
+                                        <rect key="frame" x="0.0" y="78" width="343" height="30"/>
+                                        <state key="normal" title="App Cachorro"/>
+                                        <connections>
+                                            <segue destination="204" kind="show" id="YLD-GG-3fd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K6-oI-HW4">
+                                        <rect key="frame" x="0.0" y="129" width="343" height="30"/>
+                                        <state key="normal" title="App Sorteio"/>
+                                        <connections>
+                                            <segue destination="pfF-9u-ghD" kind="show" id="Aup-SX-djO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3611">
+                                        <rect key="frame" x="0.0" y="180" width="343" height="30"/>
+                                        <state key="normal" title="App Combustivel"/>
+                                        <connections>
+                                            <segue destination="3607" kind="show" id="3676"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11427">
+                                <rect key="frame" x="123" y="327" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="App ATM"/>
+                                <connections>
+                                    <action selector="UIButton11427_TouchUpInside:" destination="1840" eventType="touchUpInside" id="13920"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13919">
+                                <rect key="frame" x="132" y="365" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cara ou Coroa"/>
+                                <connections>
+                                    <segue destination="13925" kind="show" id="13995"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17647">
+                                <rect key="frame" x="96" y="403" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Filmes Catalogo"/>
+                                <connections>
+                                    <action selector="UIButton17647_TouchUpInside:" destination="1840" eventType="touchUpInside" id="17648"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="23401" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="157" y="583" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue id="23474" destination="23075" kind="show"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qVs-sS-1Mq" firstAttribute="leading" secondItem="1841" secondAttribute="leadingMargin" id="5da-64-AdS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qVs-sS-1Mq" secondAttribute="trailing" id="nBy-pC-SaA"/>
+                            <constraint firstItem="qVs-sS-1Mq" firstAttribute="top" secondItem="1837" secondAttribute="bottom" constant="15" id="qx6-TC-YMr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MENU" id="1889"/>
+                    <connections>
+                        <outlet property="buttonTeste" destination="23401" id="name-outlet-23401"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1842" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-729" y="-494"/>
+        </scene>
+        <!--Combustivel View-->
+        <scene sceneID="3606">
+            <objects>
+                <viewController id="3607" customClass="CombustivelView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3604"/>
+                        <viewControllerLayoutGuide type="bottom" id="3605"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3608">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="APP POSTO/logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="3679">
+                                <rect key="frame" x="50" y="85" width="276" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preco Alcool:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3680">
+                                <rect key="frame" x="16" y="252" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preco Gasolina: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3681">
+                                <rect key="frame" x="225" y="252" width="134" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3682">
+                                <rect key="frame" x="24" y="281" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3683">
+                                <rect key="frame" x="237" y="281" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3684">
+                                <rect key="frame" x="126" y="344" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Calcular"/>
+                                <connections>
+                                    <action selector="ButtonCombustivel_TouchUpInside:" destination="3607" eventType="touchUpInside" id="3686"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3685">
+                                <rect key="frame" x="58" y="400" width="258" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.403596671587168" green="1" blue="0.48805332922443301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="ButtonCombustivel" destination="3684" id="name-outlet-3684"/>
+                        <outlet property="TextAlcool" destination="3682" id="name-outlet-3682"/>
+                        <outlet property="TextEscolha" destination="3685" id="name-outlet-3685"/>
+                        <outlet property="TextGasolina" destination="3683" id="name-outlet-3683"/>
+                        <outlet property="teste123" destination="3680" id="name-outlet-3680"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3609" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="495"/>
+        </scene>
+        <!--Atm View-->
+        <!--Atm Cliente-->
+        <scene sceneID="c1E-wT-k8F">
+            <objects>
+                <viewController id="gyl-gy-YCF" customClass="AtmCliente" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ONC-Gv-u52"/>
+                        <viewControllerLayoutGuide type="bottom" id="mB8-bx-a6V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y2S-At-14F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="12892">
+                                <rect key="frame" x="93" y="94" width="189" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLIENTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12093">
+                                        <rect key="frame" x="0.0" y="30" width="104" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="textColor" red="0.72490733861923196" green="0.78627556562423695" blue="0.25457531213760398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App ATM/detalhe_cliente.png" translatesAutoresizingMaskIntoConstraints="NO" id="12891">
+                                        <rect key="frame" x="104" y="0.0" width="85" height="90"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13159">
+                                <rect key="frame" x="16" y="360" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="LabelTextCliente" destination="13159" id="name-outlet-13159"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTY-dh-fGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="-570"/>
+        </scene>
+        <!--Atm Empresa-->
+        <scene sceneID="2SQ-lw-qjA">
+            <objects>
+                <viewController id="8vo-4r-6g1" customClass="AtmEmpresa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Kr-RV-oY5"/>
+                        <viewControllerLayoutGuide type="bottom" id="nnX-fh-eaJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lo4-H0-4Tz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="12899">
+                                <rect key="frame" x="93" y="94" width="188.5" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMPRESA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12900">
+                                        <rect key="frame" x="0.0" y="24.5" width="103.5" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="textColor" red="0.92625510692596402" green="0.44191983342170699" blue="0.28224354982376099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App ATM/detalhe_empresa.png" translatesAutoresizingMaskIntoConstraints="NO" id="12901">
+                                        <rect key="frame" x="103.5" y="0.0" width="85" height="79"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKG-td-pD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="1238"/>
+        </scene>
+        <!--Atm Servicos-->
+        <scene sceneID="BRF-xL-31w">
+            <objects>
+                <viewController id="rER-R4-Hop" customClass="AtmServicos" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e0m-bh-5dX"/>
+                        <viewControllerLayoutGuide type="bottom" id="t0A-0A-7Sc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nRe-uZ-fai">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="12896">
+                                <rect key="frame" x="93" y="94" width="191.5" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVICOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12897">
+                                        <rect key="frame" x="0.0" y="24.5" width="106.5" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="textColor" red="0.10190574079752" green="0.81776982545852706" blue="0.78313690423965499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App ATM/detalhe_servico.png" translatesAutoresizingMaskIntoConstraints="NO" id="12898">
+                                        <rect key="frame" x="106.5" y="0.0" width="85" height="79"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPb-JL-FdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="1008"/>
+        </scene>
+        <!--Atm Contato-->
+        <scene sceneID="Npl-92-iMP">
+            <objects>
+                <viewController id="mTb-vt-Xuj" customClass="AtmContato" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b92-Dr-x9k"/>
+                        <viewControllerLayoutGuide type="bottom" id="snU-Wg-D6j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AfB-oA-CbN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="12893">
+                                <rect key="frame" x="93" y="94" width="219.5" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTATO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12894">
+                                        <rect key="frame" x="0.0" y="44" width="107.5" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="textColor" red="0.38246446847915599" green="0.74115860462188698" blue="0.54775774478912398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App ATM/detalhe_contato.png" translatesAutoresizingMaskIntoConstraints="NO" id="12895">
+                                        <rect key="frame" x="107.5" y="0.0" width="112" height="118"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9W5-S5-02M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="74"/>
+        </scene>
+        <!--Cara Coroa View-->
+        <scene sceneID="13924">
+            <objects>
+                <viewController id="13925" customClass="CaraCoroaView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="13922"/>
+                        <viewControllerLayoutGuide type="bottom" id="13923"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="13926">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagens-cara-coroa/logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="14057">
+                                <rect key="frame" x="79" y="120" width="216" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38246446847915649" green="0.74115860462188721" blue="0.54775774478912354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0e-bK-b0R">
+                                <rect key="frame" x="97" y="267" width="181" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="imagens-cara-coroa/botao_jogar.png"/>
+                                <connections>
+                                    <segue destination="18214" kind="show" id="18567"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38246446847915649" green="0.74115860462188721" blue="0.54775774478912354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="13927" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1488.8" y="497.2906"/>
+        </scene>
+        <!--Cara Coroa View2-->
+        <scene sceneID="18213">
+            <objects>
+                <viewController id="18214" customClass="CaraCoroaView2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18211"/>
+                        <viewControllerLayoutGuide type="bottom" id="18212"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="18215">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagens-cara-coroa/moeda_cara.png" translatesAutoresizingMaskIntoConstraints="NO" id="18218">
+                                <rect key="frame" x="35" y="254" width="305" height="304"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38246446847915599" green="0.74115860462188698" blue="0.54775774478912398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="MoedaImageView" destination="18218" id="name-outlet-18218"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18216" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1527" y="1438"/>
+        </scene>
+        <scene sceneID="23074">
+            <objects>
+                <viewController id="23075" sceneMemberID="viewController" customClass="AtmView">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="23072"/>
+                        <viewControllerLayoutGuide type="bottom" id="23073"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="23076">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="23974" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" spacing="16">
+                                <rect key="frame" x="56" y="314" width="303" height="258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" id="23975" translatesAutoresizingMaskIntoConstraints="NO" spacing="-35">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="121"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23976">
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="121"/>
+                                                <state key="normal" title="Button" image="App ATM/menu_cliente.png"/>
+                                                <connections>
+                                                    <segue id="24788" destination="gyl-gy-YCF" kind="show" identifier="ClienteDados"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23977">
+                                                <rect key="frame" x="134" y="0.0" width="169" height="121"/>
+                                                <state key="normal" title="Button" image="App ATM/menu_contato.png"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" id="23978" translatesAutoresizingMaskIntoConstraints="NO" alignment="center" spacing="-35">
+                                        <rect key="frame" x="0.0" y="137" width="303" height="121"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23979">
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="121"/>
+                                                <state key="normal" title="Button" image="App ATM/menu_empresa.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23980">
+                                                <rect key="frame" x="134" y="0.0" width="169" height="121"/>
+                                                <state key="normal" title="Button" image="App ATM/menu_servico.png"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="23981" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="68" y="180" width="266" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App ATM/logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="23982">
+                                        <rect key="frame" x="0.0" y="0.0" width="266" height="96"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24231">
+                                <rect key="frame" x="139" y="129" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="testeText" destination="24231" id="name-outlet-24231"/>
+                        <outlet property="ClienteDados" destination="23976" id="name-outlet-23976"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23077" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="350"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="APP POSTO/logo.png" width="407" height="106"/>
+        <image name="App ATM/detalhe_cliente.png" width="85" height="90"/>
+        <image name="App ATM/detalhe_contato.png" width="112" height="118"/>
+        <image name="App ATM/detalhe_empresa.png" width="85" height="79"/>
+        <image name="App ATM/detalhe_servico.png" width="85" height="79"/>
+        <image name="App ATM/logo.png" width="266" height="96"/>
+        <image name="App ATM/menu_cliente.png" width="115" height="121"/>
+        <image name="Logo.png" width="57" height="57"/>
+        <image name="cao.png" width="800" height="600"/>
+        <image name="imagens-app-sorteio/botaogerar-pressionado.png" width="261" height="261"/>
+        <image name="imagens-app-sorteio/botaogerar.png" width="261" height="261"/>
+        <image name="imagens-app-sorteio/logo.png" width="328" height="130"/>
+        <image name="imagens-cara-coroa/botao_jogar.png" width="271" height="74"/>
+        <image name="imagens-cara-coroa/logo.png" width="321" height="154"/>
+        <image name="imagens-cara-coroa/moeda_cara.png" width="305" height="304"/>
+        <image name="App ATM/menu_contato.png" width="115" height="121"/>
+        <image name="App ATM/menu_empresa.png" width="115" height="121"/>
+        <image name="App ATM/menu_servico.png" width="115" height="121"/>
+    </resources>
+</document>

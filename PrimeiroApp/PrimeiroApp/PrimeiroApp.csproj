@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <ProjectGuid>{FFC3171D-B84F-489A-96EC-811BE18F7930}</ProjectGuid>
+        <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>PrimeiroApp</RootNamespace>
+        <AssemblyName>PrimeiroApp</AssemblyName>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+        <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <MtouchArch>x86_64</MtouchArch>
+        <MtouchLink>None</MtouchLink>
+        <MtouchDebug>true</MtouchDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchLink>None</MtouchLink>
+        <MtouchArch>x86_64</MtouchArch>
+        <ConsolePause>false</ConsolePause>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhone\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchDebug>true</MtouchDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <ConsolePause>false</ConsolePause>
+        <CodesignKey>iPhone Developer</CodesignKey>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Core" />
+        <Reference Include="Xamarin.iOS" />
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+        <Folder Include="Resources\APP POSTO\" />
+        <Folder Include="Resources\App ATM\" />
+        <Folder Include="Resources\CaraCoroa\" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="Main.storyboard" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Info.plist" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+        <Compile Include="ViewController.cs" />
+        <Compile Include="ViewController.designer.cs">
+            <DependentUpon>ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TelaPrincipal.cs" />
+        <Compile Include="TelaPrincipal.designer.cs">
+          <DependentUpon>TelaPrincipal.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Index.cs" />
+        <Compile Include="Index.designer.cs">
+          <DependentUpon>Index.cs</DependentUpon>
+        </Compile>
+        <Compile Include="SorteioView.cs" />
+        <Compile Include="SorteioView.designer.cs">
+          <DependentUpon>SorteioView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CombustivelView.cs" />
+        <Compile Include="CombustivelView.designer.cs">
+          <DependentUpon>CombustivelView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AtmView.cs" />
+        <Compile Include="AtmView.designer.cs">
+          <DependentUpon>AtmView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AtmCliente.cs" />
+        <Compile Include="AtmCliente.designer.cs">
+          <DependentUpon>AtmCliente.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AtmContato.cs" />
+        <Compile Include="AtmContato.designer.cs">
+          <DependentUpon>AtmContato.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AtmEmpresa.cs" />
+        <Compile Include="AtmEmpresa.designer.cs">
+          <DependentUpon>AtmEmpresa.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AtmServicos.cs" />
+        <Compile Include="AtmServicos.designer.cs">
+          <DependentUpon>AtmServicos.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CaraCoroaView.cs" />
+        <Compile Include="CaraCoroaView.designer.cs">
+          <DependentUpon>CaraCoroaView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CaraCoroaView2.cs" />
+        <Compile Include="CaraCoroaView2.designer.cs">
+          <DependentUpon>CaraCoroaView2.cs</DependentUpon>
+        </Compile>
+        <Compile Include="PrimeiraTableView.cs" />
+        <Compile Include="PrimeiraTableView.designer.cs">
+          <DependentUpon>PrimeiraTableView.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Resources\cao.png" />
+      <BundleResource Include="Resources\Logo.png" />
+      <BundleResource Include="Resources\imagens-app-sorteio\botaogerar-pressionado.png" />
+      <BundleResource Include="Resources\imagens-app-sorteio\botaogerar.png" />
+      <BundleResource Include="Resources\imagens-app-sorteio\logo.png" />
+      <BundleResource Include="Resources\APP POSTO\logo.png" />
+      <BundleResource Include="Resources\App ATM\cliente1.png" />
+      <BundleResource Include="Resources\App ATM\cliente2.png" />
+      <BundleResource Include="Resources\App ATM\detalhe_cliente.png" />
+      <BundleResource Include="Resources\App ATM\detalhe_contato.png" />
+      <BundleResource Include="Resources\App ATM\detalhe_empresa.png" />
+      <BundleResource Include="Resources\App ATM\detalhe_servico.png" />
+      <BundleResource Include="Resources\App ATM\logo.png" />
+      <BundleResource Include="Resources\App ATM\menu_cliente.png" />
+      <BundleResource Include="Resources\App ATM\menu_contato.png" />
+      <BundleResource Include="Resources\App ATM\menu_empresa.png" />
+      <BundleResource Include="Resources\App ATM\menu_servico.png" />
+      <BundleResource Include="Resources\CaraCoroa\botao_jogar.png" />
+      <BundleResource Include="Resources\CaraCoroa\botao_voltar.png" />
+      <BundleResource Include="Resources\CaraCoroa\logo.png" />
+      <BundleResource Include="Resources\CaraCoroa\moeda_cara.png" />
+      <BundleResource Include="Resources\CaraCoroa\moeda_coroa.png" />
+      <BundleResource Include="Resources\imagens-cara-coroa\botao_jogar.png" />
+      <BundleResource Include="Resources\imagens-cara-coroa\botao_voltar.png" />
+      <BundleResource Include="Resources\imagens-cara-coroa\logo.png" />
+      <BundleResource Include="Resources\imagens-cara-coroa\moeda_cara.png" />
+      <BundleResource Include="Resources\imagens-cara-coroa\moeda_coroa.png" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
