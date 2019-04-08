@@ -17,14 +17,6 @@ namespace PrimeiroApp
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton buttonTeste { get; set; }
 
-        [Action ("UIButton11427_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton11427_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("UIButton17647_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton17647_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (buttonTeste != null) {
