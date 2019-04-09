@@ -121,6 +121,7 @@
         <Folder Include="Resources\APP POSTO\" />
         <Folder Include="Resources\App ATM\" />
         <Folder Include="Resources\CaraCoroa\" />
+        <Folder Include="Resources\Filmes\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Main.storyboard" />
@@ -179,9 +180,13 @@
         <Compile Include="CaraCoroaView2.designer.cs">
           <DependentUpon>CaraCoroaView2.cs</DependentUpon>
         </Compile>
-        <Compile Include="PrimeiraTableView.cs" />
-        <Compile Include="PrimeiraTableView.designer.cs">
-          <DependentUpon>PrimeiraTableView.cs</DependentUpon>
+        <Compile Include="FilmeLista.cs" />
+        <Compile Include="FilmeLista_.designer.cs">
+          <DependentUpon>FilmeLista.cs</DependentUpon>
+        </Compile>
+        <Compile Include="FilmeListaAdd.cs" />
+        <Compile Include="FilmeListaAdd.designer.cs">
+          <DependentUpon>FilmeListaAdd.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>
@@ -212,6 +217,16 @@
       <BundleResource Include="Resources\imagens-cara-coroa\logo.png" />
       <BundleResource Include="Resources\imagens-cara-coroa\moeda_cara.png" />
       <BundleResource Include="Resources\imagens-cara-coroa\moeda_coroa.png" />
+      <BundleResource Include="Resources\Filmes\filme1.png" />
+      <BundleResource Include="Resources\Filmes\filme2.png" />
+      <BundleResource Include="Resources\Filmes\filme3.png" />
+      <BundleResource Include="Resources\Filmes\filme4.png" />
+      <BundleResource Include="Resources\Filmes\filme5.png" />
+      <BundleResource Include="Resources\Filmes\filme6.png" />
+      <BundleResource Include="Resources\Filmes\filme7.png" />
+      <BundleResource Include="Resources\Filmes\filme8.png" />
+      <BundleResource Include="Resources\Filmes\filme9.png" />
+      <BundleResource Include="Resources\Filmes\filme10.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

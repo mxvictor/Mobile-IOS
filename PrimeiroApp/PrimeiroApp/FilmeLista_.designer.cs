@@ -11,11 +11,8 @@ using UIKit;
 
 namespace PrimeiroApp
 {
-    [Register ("PrimeiraTableView")]
-    partial class PrimeiraTableView
+    [Register ("FilmeLista")]
+    partial class FilmeLista
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }
