@@ -7,6 +7,8 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using System.Runtime.CompilerServices;
 using CoreGraphics;
+using SQLite;
+using SQLitePCL;
 
 namespace PrimeiroApp
 {
@@ -14,102 +16,73 @@ namespace PrimeiroApp
 
     public partial class FilmeListaAdd : UIViewController
     {
-        public List<string> Filmes { get; set; }
-        public List<string> Sinopses { get; set; }
 
         public string Titulo { get; set; }
         public string Sinopse { get; set; }
         public UIImage Icone { get; set; }
 
-        public UIImagePickerController imagePicker { get; set; }
-        public UIImageView imagelogo { get; set; }
+        public UIImagePickerController ImagePicker { get; set; }
+        public UIImageView Imagelogo { get; set; }
 
         public FilmeListaAdd(string titulo, string sinopse, UIImage icone)
         {
             Titulo = titulo;
             Sinopse = sinopse;
             Icone = icone;
+
+            //string dbPath = dbPath.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "database.db3");
+            //var db = new SQLiteConnection(dbPath);
         }
         public FilmeListaAdd()
         {
 
         }
 
-        public List<FilmeListaAdd> filmeLista { get; set; }
+        public List<FilmeListaAdd> FilmeLista { get; set; }
 
         public FilmeListaAdd(IntPtr handle) : base(handle)
         {
-            Filmes = new List<string>();
-            Sinopses = new List<string>();
+          
         }
 
         partial void ButtonLoadImage_TouchUpInside(UIButton sender)
         {
-            imagelogo = new UIImageView();
-            //var permissions = new Permission[] { Permission.Camera, Permission.MediaLibrary };
+            Imagelogo = new UIImageView();
 
-            //await CrossPermissions.Current.RequestPermissionsAsync(permissions);
+            ImagePicker = new UIImagePickerController();
 
-            //var Status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.MediaLibrary);
+            // set our source to the photo library
+            ImagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
 
-            //if (Status == PermissionStatus.Granted)
-            //{
-            //await CrossMedia.Current.Initialize();
+            // set what media types
+            ImagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
 
-            //if (!CrossMedia.Current.IsPickPhotoSupported)
-            //{
-            //    var alert = UIAlertController.Create("Nao suportado!", "Seu dispositivo nao tem suporte para fotos", UIAlertControllerStyle.Alert);
-            //    PresentViewController(alert, true, null);
+            ImagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
+            ImagePicker.Canceled += Handle_Canceled;
 
-            //    var selectedImageFile = await CrossMedia.Current.PickPhotoAsync();
-
-            //    if (selectedImageFile == null)
-            //    {
-            //        var alerta = UIAlertController.Create("ERROR!", "Selecione uma imagem e tente novamente! ", UIAlertControllerStyle.Alert);
-            //        PresentViewController(alerta, true, null);
-            //    }
-            //    var imageData = NSData.FromStream(selectedImageFile.GetStream());
-            //    var image = UIImage.LoadFromData(imageData);
-
-            //    Icone = image;
-
-            //}w
-
-
-                    imagePicker = new UIImagePickerController();
-
-                    // set our source to the photo library
-                    imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-
-                    // set what media types
-                    imagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
-
-                    imagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
-                    imagePicker.Canceled += Handle_Canceled;
-
-                    // show the picker
-                    NavigationController.PresentModalViewController(imagePicker, true);
-                    //UIPopoverController picc = new UIPopoverController(imagePicker);
+            // show the picker
+            NavigationController.PresentModalViewController(ImagePicker, true);
+            //UIPopoverController picc = new UIPopoverController(imagePicker);
         }
 
         // Do something when the
         void Handle_Canceled(object sender, EventArgs e)
         {
-            imagePicker.DismissModalViewController(true);
+            ImagePicker.DismissModalViewController(true);
         }
 
         // This is a sample method that handles the FinishedPickingMediaEvent
         protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
         {
-                // get the original image
-                UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
-                    // do something with the image
-                   
-                    //UIImage logoImage = originalImage;
-                    imagelogo.Image = originalImage;
-            
+            // get the original image
+            UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+            // do something with the image
+
+            //UIImage logoImage = originalImage;
+            Imagelogo.Image = originalImage;
+
             // dismiss the picker
-            imagePicker.DismissModalViewController(true);
+            ImagePicker.DismissModalViewController(true);
         }
 
 
@@ -124,13 +97,13 @@ namespace PrimeiroApp
 
         void HandleAction(UIAlertAction obj)
         {
-            filmeLista.Add(new FilmeListaAdd() { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text, Icone = imagelogo.Image });
+            FilmeLista.Add(new FilmeListaAdd() { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text, Icone = Imagelogo.Image });
         }
 
         public override void ViewDidLoad()
         {
 
-            filmeLista = new List<FilmeListaAdd>()
+            FilmeLista = new List<FilmeListaAdd>()
             {
                 new FilmeListaAdd()
                 {
@@ -153,7 +126,7 @@ namespace PrimeiroApp
             };
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.  
-                        
+
 
         }
 
@@ -169,8 +142,8 @@ namespace PrimeiroApp
 
             if (segue.Identifier == "ListarFilmesSegue")
             {
-                var testeclasse = segue.DestinationViewController as FilmeLista;
-                testeclasse.filmeListas = filmeLista;
+                var segueFilmeLista = segue.DestinationViewController as FilmeLista;
+                segueFilmeLista.FilmeListas = FilmeLista;
             }
         }
     }

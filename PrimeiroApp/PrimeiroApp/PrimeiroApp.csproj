@@ -25,6 +25,7 @@
         <MtouchArch>x86_64</MtouchArch>
         <MtouchLink>None</MtouchLink>
         <MtouchDebug>true</MtouchDebug>
+        <CodesignKey>iPhone Developer: victoryoursoft@gmail.com (3GTZ2Q9WWT)</CodesignKey>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
         <DebugType>none</DebugType>
@@ -47,7 +48,7 @@
         <ConsolePause>false</ConsolePause>
         <MtouchArch>ARM64</MtouchArch>
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-        <CodesignKey>iPhone Developer</CodesignKey>
+        <CodesignKey>iPhone Developer: victoryoursoft@gmail.com (3GTZ2Q9WWT)</CodesignKey>
         <MtouchDebug>true</MtouchDebug>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -76,6 +77,9 @@
       </PackageReference>
       <PackageReference Include="Plugin.Permissions">
         <Version>3.0.0.12</Version>
+      </PackageReference>
+      <PackageReference Include="sqlite-net-pcl">
+        <Version>1.5.231</Version>
       </PackageReference>
     </ItemGroup>
     <ItemGroup>
@@ -198,6 +202,7 @@
         <Compile Include="FilmeListaDescricao.designer.cs">
           <DependentUpon>FilmeListaDescricao.cs</DependentUpon>
         </Compile>
+        <Compile Include="DataAccess.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\cao.png" />
