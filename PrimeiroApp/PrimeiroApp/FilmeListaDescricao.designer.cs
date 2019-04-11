@@ -11,8 +11,8 @@ using UIKit;
 
 namespace PrimeiroApp
 {
-    [Register ("FilmeLista")]
-    partial class FilmeLista
+    [Register ("FilmeListaDescricao")]
+    partial class FilmeListaDescricao
     {
         void ReleaseDesignerOutlets ()
         {

@@ -41,25 +41,31 @@ namespace PrimeiroApp
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 FilmeListaAdd filme = new FilmeListaAdd();
+
                 var cell = tableView.DequeueReusableCell(FilmeLista.filmeCellId);
                 int row = indexPath.Row;
                 cell.TextLabel.Text = controller.filmeListas[row].Titulo;
+                cell.ImageView.Image = controller.filmeListas[row].Icone;
+                cell.ImageView.Layer.CornerRadius = 50;
+                cell.ImageView.ClipsToBounds = true;
+           
                 return cell;
             }
 
-            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+           public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
                 tableView.DeselectRow(indexPath, true);
-
-                int row = indexPath.Row;
-                var alerta = UIAlertController.Create("Sinopse", controller.filmeListas[row].Sinopse, UIAlertControllerStyle.Alert);
-                alerta.AddAction(UIAlertAction.Create("Voltar", UIAlertActionStyle.Default, null));
-                controller.MostrarAlerta(alerta);
+                
+                //int row = indexPath.Row;
+                //var alerta = UIAlertController.Create("Sinopse", controller.filmeListas[row].Sinopse, UIAlertControllerStyle.Alert);
+                //alerta.AddAction(UIAlertAction.Create("Voltar", UIAlertActionStyle.Default, null));
+                //controller.MostrarAlerta(alerta);
 
             }
         }
         public override void ViewDidLoad()
         {
+
 
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.

@@ -71,6 +71,12 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+      <PackageReference Include="Xam.Plugin.Media">
+        <Version>4.0.1.5</Version>
+      </PackageReference>
+      <PackageReference Include="Plugin.Permissions">
+        <Version>3.0.0.12</Version>
+      </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -188,6 +194,10 @@
         <Compile Include="FilmeListaAdd.designer.cs">
           <DependentUpon>FilmeListaAdd.cs</DependentUpon>
         </Compile>
+        <Compile Include="FilmeListaDescricao.cs" />
+        <Compile Include="FilmeListaDescricao.designer.cs">
+          <DependentUpon>FilmeListaDescricao.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\cao.png" />
@@ -227,6 +237,7 @@
       <BundleResource Include="Resources\Filmes\filme8.png" />
       <BundleResource Include="Resources\Filmes\filme9.png" />
       <BundleResource Include="Resources\Filmes\filme10.png" />
+      <BundleResource Include="Resources\Filmes\pasta-botao-adicionar_318-32042.jpg" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
