@@ -24,6 +24,8 @@ namespace PrimeiroApp
         public UIImagePickerController ImagePicker { get; set; }
         public UIImageView Imagelogo { get; set; }
 
+        public DataAccess db = new DataAccess();
+
         public FilmeListaAdd(string titulo, string sinopse, UIImage icone)
         {
             Titulo = titulo;
@@ -38,7 +40,7 @@ namespace PrimeiroApp
 
         }
 
-        public List<FilmeListaAdd> FilmeLista { get; set; }
+        public List<FilmeListaAdd> FilmeListas { get; set; }
 
         public FilmeListaAdd(IntPtr handle) : base(handle)
         {
@@ -97,13 +99,13 @@ namespace PrimeiroApp
 
         void HandleAction(UIAlertAction obj)
         {
-            FilmeLista.Add(new FilmeListaAdd() { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text, Icone = Imagelogo.Image });
+            FilmeListas.Add(new FilmeListaAdd() { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text, Icone = Imagelogo.Image });
         }
 
         public override void ViewDidLoad()
         {
 
-            FilmeLista = new List<FilmeListaAdd>()
+            FilmeListas = new List<FilmeListaAdd>()
             {
                 new FilmeListaAdd()
                 {
@@ -124,9 +126,13 @@ namespace PrimeiroApp
                 }
 
             };
+            db.ConnectData();
+            FilmeListas = db.FilmesLista();
+            TextFieldNome.Text = FilmeListas[0].Titulo;
+            TextFieldSinopse.Text = FilmeListas[0].Sinopse;
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.  
-
+            // Perform any additional setup after loading the view, typically from a nib.
+        
 
         }
 
@@ -143,7 +149,7 @@ namespace PrimeiroApp
             if (segue.Identifier == "ListarFilmesSegue")
             {
                 var segueFilmeLista = segue.DestinationViewController as FilmeLista;
-                segueFilmeLista.FilmeListas = FilmeLista;
+                segueFilmeLista.FilmeListas = FilmeListas;
             }
         }
     }
