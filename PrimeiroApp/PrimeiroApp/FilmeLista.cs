@@ -10,8 +10,9 @@ namespace PrimeiroApp
     {
         static NSString filmeCellId = new NSString("FilmeCell");
 
-        public List<FilmeListaAdd> FilmeListas { get; set; }
+        public List<Filme> FilmeListas { get; set; }
         public int row1 { set; get; }
+        DataAccess db = new DataAccess();
 
         public void MostrarAlerta(UIAlertController alerta)
         {
@@ -35,17 +36,21 @@ namespace PrimeiroApp
 
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return controller.FilmeListas.Count;
+
+                List<Filme> FilmeListar = controller.db.FilmesLista();
+                return FilmeListar.Count;
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-                FilmeListaAdd filme = new FilmeListaAdd();
+                List<Filme> FilmeListar = controller.db.FilmesLista();
+
+                UIImage img = new UIImage();
 
                 var cell = tableView.DequeueReusableCell(FilmeLista.filmeCellId);
                 int row = indexPath.Row;
-                cell.TextLabel.Text = controller.FilmeListas[row].Titulo;
-                cell.ImageView.Image = controller.FilmeListas[row].Icone;
+                cell.TextLabel.Text = FilmeListar[row].Titulo;
+                //cell.ImageView.Image = FilmeListar[row].Icone);
                 cell.ImageView.Layer.CornerRadius = 50;
                 cell.ImageView.ClipsToBounds = true;
 
@@ -75,6 +80,7 @@ namespace PrimeiroApp
 
             if (segue.Identifier == "DescricaoSegue")
             {
+                FilmeListas = db.FilmesLista();
                 var segueDescricao = segue.DestinationViewController as FilmeListaDescricao;
                 segueDescricao.FilmeListas = FilmeListas;
                 segueDescricao.row = row1;

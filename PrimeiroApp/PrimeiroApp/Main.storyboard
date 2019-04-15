@@ -665,14 +665,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-NQ-lDy">
-                                <rect key="frame" x="170" y="338" width="52" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Filmes/pasta-botao-adicionar_318-32042.jpg"/>
-                                <connections>
-                                    <action selector="ButtonLoadImage_TouchUpInside:" destination="26160" id="38783" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -680,7 +672,6 @@
                         <outlet property="ButtonCadastrarFilme" destination="27708" id="name-outlet-27708"/>
                         <outlet property="TextFieldNome" destination="26418" id="name-outlet-26418"/>
                         <outlet property="TextFieldSinopse" destination="35592" id="name-outlet-35592"/>
-                        <outlet property="ButtonLoadImage" destination="Cee-NQ-lDy" id="name-outlet-Cee-NQ-lDy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26162" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -699,10 +690,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36154">
-                                <rect key="frame" x="68" y="158" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" id="44859" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="16" y="327" width="343" height="485"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -721,7 +708,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="ImageViewDesc" destination="36154" id="name-outlet-36154"/>
                         <outlet property="TextViewdesc" destination="44859" id="name-outlet-44859"/>
                         <outlet property="LabelTituloDesc" destination="45633" id="name-outlet-45633"/>
                     </connections>
@@ -750,6 +736,5 @@
         <image name="imagens-cara-coroa/botao_jogar.png" width="271" height="74"/>
         <image name="imagens-cara-coroa/logo.png" width="321" height="154"/>
         <image name="imagens-cara-coroa/moeda_cara.png" width="305" height="304"/>
-        <image name="Filmes/pasta-botao-adicionar_318-32042.jpg" width="626" height="626"/>
     </resources>
 </document>

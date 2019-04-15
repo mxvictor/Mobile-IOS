@@ -7,7 +7,7 @@ namespace PrimeiroApp
 {
     public partial class FilmeListaDescricao : UIViewController
     {
-        public List<FilmeListaAdd> FilmeListas { get; set; }
+        public List<Filme> FilmeListas { get; set; }
         public int row { get; set; }
 
         public FilmeListaDescricao (IntPtr handle) : base (handle)
@@ -17,7 +17,7 @@ namespace PrimeiroApp
         public override void ViewDidLoad()
         {
             LabelTituloDesc.Text = FilmeListas[row].Titulo;
-            ImageViewDesc.Image = FilmeListas[row].Icone;
+            //ImageViewDesc.Image = FilmeListas[row].Icone;
             TextViewdesc.Text = FilmeListas[row].Sinopse;
 
 

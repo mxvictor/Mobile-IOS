@@ -16,10 +16,6 @@ namespace PrimeiroApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView ImageViewDesc { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelTituloDesc { get; set; }
 
         [Outlet]
@@ -28,11 +24,6 @@ namespace PrimeiroApp
 
         void ReleaseDesignerOutlets ()
         {
-            if (ImageViewDesc != null) {
-                ImageViewDesc.Dispose ();
-                ImageViewDesc = null;
-            }
-
             if (LabelTituloDesc != null) {
                 LabelTituloDesc.Dispose ();
                 LabelTituloDesc = null;
