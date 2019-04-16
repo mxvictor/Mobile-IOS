@@ -16,8 +16,9 @@ namespace PrimeiroApp
 
         public override void ViewDidLoad()
         {
+
             LabelTituloDesc.Text = FilmeListas[row].Titulo;
-            //ImageViewDesc.Image = FilmeListas[row].Icone;
+            ImageViewDesc.Image = ByteArrayToImage(FilmeListas[row].Icone);
             TextViewdesc.Text = FilmeListas[row].Sinopse;
 
 
@@ -29,6 +30,23 @@ namespace PrimeiroApp
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        public static UIImage ByteArrayToImage(byte[] _imageBuffer)
+        {
+            if (_imageBuffer != null)
+            {
+                if (_imageBuffer.Length != 0)
+                {
+                    NSData imageData = NSData.FromArray(_imageBuffer);
+                    return UIImage.LoadFromData(imageData);
+                }
+                else
+                    return new UIImage();
+
+            }
+            else
+                return new UIImage();
         }
 
     }

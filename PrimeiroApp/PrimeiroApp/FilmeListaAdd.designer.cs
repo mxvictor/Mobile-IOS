@@ -20,21 +20,34 @@ namespace PrimeiroApp
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ButtonLoadImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField TextFieldNome { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField TextFieldSinopse { get; set; }
+        UIKit.UITextView TextFieldSinopse { get; set; }
 
         [Action ("ButtonCadastrarFilme_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void ButtonCadastrarFilme_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("ButtonLoadImage_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ButtonLoadImage_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
             if (ButtonCadastrarFilme != null) {
                 ButtonCadastrarFilme.Dispose ();
                 ButtonCadastrarFilme = null;
+            }
+
+            if (ButtonLoadImage != null) {
+                ButtonLoadImage.Dispose ();
+                ButtonLoadImage = null;
             }
 
             if (TextFieldNome != null) {

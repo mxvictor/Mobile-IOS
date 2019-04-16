@@ -21,8 +21,8 @@ namespace PrimeiroApp
         public string Sinopse { get; set; }
         public UIImage Icone { get; set; }
 
-        //public UIImagePickerController ImagePicker { get; set; }
-        //public UIImageView Imagelogo { get; set; }
+        public UIImagePickerController ImagePicker { get; set; }
+        public UIImageView Imagelogo { get; set; }
 
         DataAccess db = new DataAccess();
 
@@ -31,9 +31,6 @@ namespace PrimeiroApp
             Titulo = titulo;
             Sinopse = sinopse;
             Icone = icone;
-
-            //string dbPath = dbPath.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "database.db3");
-            //var db = new SQLiteConnection(dbPath);
         }
         public List<Filme> FilmeListas_ { get; set; }
 
@@ -42,52 +39,49 @@ namespace PrimeiroApp
 
         }
 
-     
-
         public FilmeListaAdd(IntPtr handle) : base(handle)
         {
-          
+
         }
 
-        //partial void ButtonLoadImage_TouchUpInside(UIButton sender)
-        //{
-        //    Imagelogo = new UIImageView();
+        partial void ButtonLoadImage_TouchUpInside(UIButton sender)
+        {
+            Imagelogo = new UIImageView();
 
-        //    ImagePicker = new UIImagePickerController();
+            ImagePicker = new UIImagePickerController();
 
-        //    // set our source to the photo library
-        //    ImagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            // set our source to the photo library
+            ImagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
 
-        //    // set what media types
-        //    ImagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+            // set what media types
+            ImagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
 
-        //    ImagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
-        //    ImagePicker.Canceled += Handle_Canceled;
+            ImagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
+            ImagePicker.Canceled += Handle_Canceled;
 
-        //    // show the picker
-        //    NavigationController.PresentModalViewController(ImagePicker, true);
-        //    //UIPopoverController picc = new UIPopoverController(imagePicker);
-        //}
+            // show the picker
+            NavigationController.PresentModalViewController(ImagePicker, true);
+            //UIPopoverController picc = new UIPopoverController(imagePicker);
+        }
+        // Do something when the
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            ImagePicker.DismissModalViewController(true);
+        }
 
-        //// Do something when the
-        //void Handle_Canceled(object sender, EventArgs e)
-        //{
-        //    ImagePicker.DismissModalViewController(true);
-        //}
+        // This is a sample method that handles the FinishedPickingMediaEvent
+        protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
+        {
+            // get the original image
+            UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+            // do something with the image
 
-        //// This is a sample method that handles the FinishedPickingMediaEvent
-        //protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
-        //{
-        //    // get the original image
-        //    UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
-        //    // do something with the image
+            //UIImage logoImage = originalImage;
+            Imagelogo.Image = originalImage;
 
-        //    //UIImage logoImage = originalImage;
-        //    Imagelogo.Image = originalImage;
-
-        //    // dismiss the picker
-        //    ImagePicker.DismissModalViewController(true);
-        //}
+            // dismiss the picker
+            ImagePicker.DismissModalViewController(true);
+        }
 
 
         partial void ButtonCadastrarFilme_TouchUpInside(UIButton sender)
@@ -102,45 +96,45 @@ namespace PrimeiroApp
         void HandleAction(UIAlertAction obj)
         {
             FilmeListas_ = new List<Filme>();
-            //FilmeListas.Add(new Filme() { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text, Icone = Imagelogo.Image });
-            FilmeListas_.Add(new Filme { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text });
+
+            FilmeListas_.Add(new Filme() { Titulo = TextFieldNome.Text, Sinopse = TextFieldSinopse.Text, Icone = ImageToByteArray(Imagelogo.Image) });
             db.Cadastrar(FilmeListas_);
         }
 
+
+        public static byte[] ImageToByteArray(UIImage _image)
+        {
+            Byte[] byteArray;
+            using (NSData nsImageData = _image.AsPNG())
+            {
+                byteArray = new Byte[nsImageData.Length];
+                System.Runtime.InteropServices.Marshal.Copy(nsImageData.Bytes, byteArray, 0, Convert.ToInt32(nsImageData.Length));
+            }
+
+            return byteArray;
+        }
         public override void ViewDidLoad()
         {
 
-            //FilmeListas = new List<FilmeListaAdd>()
-            //{
-            //    new FilmeListaAdd()
-            //    {
-            //        Titulo = "007 - Quantum of Solace",
-            //        Sinopse = "Após a morte de Vesper Lynd, James Bond faz com que sua próxima missão seja pessoal. " +
-            //            "A caçada àqueles envolvidos na morte da mulher de sua vida o leva ao encontro do cruel empresário Dominic Greene, que" +
-            //            " faz parte da organização que coagiu Vesper. Bond descobre que Greene planeja obter o controle total de um recurso natural " +
-            //            "vital e deve enfrentar perigo e traição para frustrar o plano.",
-            //        Icone = UIImage.FromBundle("Filmes/filme1.png")
-            //    },
-            //    new FilmeListaAdd()
-            //    {
-            //        Titulo = "Star Wars: O Despertar da Força",
-            //        Sinopse = "A queda de Darth Vader e do Império levou ao surgimento de uma nova força sombria: a Primeira Ordem." +
-            //            " Eles procuram o jedi Luke Skywalker, desaparecido. A resistência tenta desesperadamente " +
-            //            "encontrá-lo antes para salvar a galáxia.",
-            //        Icone = UIImage.FromBundle("Filmes/filme2.png")
-            //    }
+            var textView = new UITextView();
+            textView.Layer.CornerRadius = 5;
+            textView.Layer.BorderColor = UIColor.Black.CGColor;
+            textView.Layer.BorderWidth = 1;
 
-            //};
+
             db.ConnectData();
-            List<Filme> FilmeListar = db.FilmesLista();            
-            TextFieldNome.Text = FilmeListar[1].Titulo;
-            //TextFieldSinopse.Text = FilmeListas[1].Sinopse;
+            List<Filme> FilmeListar = db.FilmesLista();
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-        
+
 
         }
 
+        public override void TouchesBegan(NSSet touches, UIEvent evt)
+        {
+            base.TouchesBegan(touches, evt);
+            View.EndEditing(true);
+        }
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();

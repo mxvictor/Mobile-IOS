@@ -30,8 +30,6 @@ namespace PrimeiroApp
             {
                 var atmcliente = segue.DestinationViewController as AtmCliente;
 
-                atmcliente.recebido = testeText.Text;
-
                 
             }
         }

@@ -146,7 +146,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue id="39880" destination="36150" kind="show" identifier="DescricaoSegue"/>
+                                    <segue destination="36150" kind="show" identifier="DescricaoSegue" id="39880"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -556,6 +556,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23977">
                                                 <rect key="frame" x="134" y="0.0" width="169" height="121"/>
                                                 <state key="normal" title="Button" image="App ATM/menu_contato.png"/>
+                                                <connections>
+                                                    <segue id="52157" destination="mTb-vt-Xuj" kind="show"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -565,37 +568,26 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23979">
                                                 <rect key="frame" x="0.0" y="0.0" width="169" height="121"/>
                                                 <state key="normal" title="Button" image="App ATM/menu_empresa.png"/>
+                                                <connections>
+                                                    <segue id="52231" destination="8vo-4r-6g1" kind="show"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23980">
                                                 <rect key="frame" x="134" y="0.0" width="169" height="121"/>
                                                 <state key="normal" title="Button" image="App ATM/menu_servico.png"/>
+                                                <connections>
+                                                    <segue id="52275" destination="rER-R4-Hop" kind="show"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="23981">
-                                <rect key="frame" x="68" y="180" width="16" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App ATM/logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="23982">
-                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24231">
-                                <rect key="frame" x="139" y="129" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="ClienteDados" destination="23976" id="name-outlet-23976"/>
-                        <outlet property="testeText" destination="24231" id="name-outlet-24231"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23077" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,7 +629,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27708">
-                                <rect key="frame" x="128" y="461" width="120" height="30"/>
+                                <rect key="frame" x="128" y="653" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cadastrar"/>
                                 <connections>
@@ -651,27 +643,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tony Stark retorna..." borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35592">
-                                <rect key="frame" x="16" y="300" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Imagem do Filme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38029">
-                                <rect key="frame" x="16" y="338" width="343" height="21"/>
+                                <rect key="frame" x="16" y="539" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwg-5W-C3t">
+                                <rect key="frame" x="167" y="534" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Filmes/pasta-botao-adicionar_318-32042.jpg"/>
+                                <connections>
+                                    <action selector="ButtonLoadImage_TouchUpInside:" destination="26160" id="46915" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" textAlignment="natural" id="48668" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontForContentSizeCategory="YES" keyboardDismissMode="onDrag">
+                                <rect key="frame" x="16" y="300" width="343" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="ButtonCadastrarFilme" destination="27708" id="name-outlet-27708"/>
                         <outlet property="TextFieldNome" destination="26418" id="name-outlet-26418"/>
-                        <outlet property="TextFieldSinopse" destination="35592" id="name-outlet-35592"/>
+                        <outlet property="ButtonLoadImage" destination="bwg-5W-C3t" id="name-outlet-bwg-5W-C3t"/>
+                        <outlet property="TextFieldSinopse" destination="48668" id="name-outlet-48668"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26162" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -690,26 +696,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" id="44859" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="44859">
                                 <rect key="frame" x="16" y="327" width="343" height="485"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="45633" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45633">
                                 <rect key="frame" x="16" y="95" width="343" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45917">
+                                <rect key="frame" x="68" y="169" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="TextViewdesc" destination="44859" id="name-outlet-44859"/>
+                        <outlet property="ImageViewDesc" destination="45917" id="name-outlet-45917"/>
                         <outlet property="LabelTituloDesc" destination="45633" id="name-outlet-45633"/>
+                        <outlet property="TextViewdesc" destination="44859" id="name-outlet-44859"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36152" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -723,7 +734,6 @@
         <image name="App ATM/detalhe_contato.png" width="112" height="118"/>
         <image name="App ATM/detalhe_empresa.png" width="85" height="79"/>
         <image name="App ATM/detalhe_servico.png" width="85" height="79"/>
-        <image name="App ATM/logo.png" width="266" height="96"/>
         <image name="App ATM/menu_cliente.png" width="115" height="121"/>
         <image name="App ATM/menu_contato.png" width="115" height="121"/>
         <image name="App ATM/menu_empresa.png" width="115" height="121"/>
@@ -736,5 +746,6 @@
         <image name="imagens-cara-coroa/botao_jogar.png" width="271" height="74"/>
         <image name="imagens-cara-coroa/logo.png" width="321" height="154"/>
         <image name="imagens-cara-coroa/moeda_cara.png" width="305" height="304"/>
+        <image name="Filmes/pasta-botao-adicionar_318-32042.jpg" width="626" height="626"/>
     </resources>
 </document>

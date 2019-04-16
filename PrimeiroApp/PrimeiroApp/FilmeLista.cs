@@ -45,14 +45,18 @@ namespace PrimeiroApp
             {
                 List<Filme> FilmeListar = controller.db.FilmesLista();
 
-                UIImage img = new UIImage();
+               
 
                 var cell = tableView.DequeueReusableCell(FilmeLista.filmeCellId);
                 int row = indexPath.Row;
-                cell.TextLabel.Text = FilmeListar[row].Titulo;
-                //cell.ImageView.Image = FilmeListar[row].Icone);
+
                 cell.ImageView.Layer.CornerRadius = 50;
                 cell.ImageView.ClipsToBounds = true;
+                cell.ImageView.SizeToFit();
+
+                cell.TextLabel.Text = FilmeListar[row].Titulo;
+                cell.ImageView.Image = ByteArrayToImage(FilmeListar[row].Icone);
+               
 
                 return cell;
             }
@@ -71,6 +75,23 @@ namespace PrimeiroApp
 
             }
 
+        }
+
+        public static UIImage ByteArrayToImage(byte[] _imageBuffer)
+        {
+            if (_imageBuffer != null)
+            {
+                if (_imageBuffer.Length != 0)
+                {
+                    NSData imageData = NSData.FromArray(_imageBuffer);
+                    return UIImage.LoadFromData(imageData);
+                }
+                else
+                    return new UIImage();
+
+            }
+            else
+                return new UIImage();
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)

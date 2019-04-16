@@ -18,20 +18,11 @@ namespace PrimeiroApp
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ClienteDados { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField testeText { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (ClienteDados != null) {
                 ClienteDados.Dispose ();
                 ClienteDados = null;
-            }
-
-            if (testeText != null) {
-                testeText.Dispose ();
-                testeText = null;
             }
         }
     }
